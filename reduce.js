@@ -1,28 +1,11 @@
-var votes = [
-  'angular',
-  'angular',
-  'angular',
-  'react',
-  'react',
-  'react',
-  'ember',
-  'angular',
-  'react',
-  'angular',
-  'vanilla'
-];
+var data = [15, 3, 20];
 
-var initialValue = {};
+var reducer = function(accumulator, item) {
+  return accumulator + item;
+}
 
-var reducer = function(tally, vote) {
-  if (!tally[vote]) {
-    tally[vote] = 1;
-  } else {
-    tally[vote] = tally[vote] + 1
-  }
-  return tally;
-};
+var initialValue = 0;
 
-var result = votes.reduce(reducer, initialValue);
+var total = data.reduce(reducer, initialValue);
 
-console.log(result);
+console.log("Sum:", total);
